@@ -1,21 +1,19 @@
 <?php
 
-namespace App\View\Components\layouts\sitelayout;
+namespace App\View\Components\forms;
 
 use Illuminate\View\Component;
-use App\Models\User;
 
-class main extends Component
+class formulario extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public $users;
-    public function __construct(User $lista)
+    public function __construct()
     {
-        $this->users = $lista->all();
+        //
     }
 
     /**
@@ -25,6 +23,6 @@ class main extends Component
      */
     public function render()
     {
-        return view('components.layouts.sitelayout.main');
+        return view('components.forms.formulario');
     }
 }

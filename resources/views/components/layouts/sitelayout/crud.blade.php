@@ -8,6 +8,9 @@
         {{$descripcion}}
       </span> 
     </div> 
+
+
+
     <div class="flex items-center justify-between"> 
       <div class="flex bg-gray-50 items-center p-2 rounded-md"> 
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor"> 
@@ -15,13 +18,21 @@
         </svg> 
         <input class="bg-gray-50 outline-none ml-1 block " type="text" name="" id="" placeholder="search..."> 
       </div> 
-      <div class="lg:ml-40 ml-10 space-x-8"> 
-        <button class="bg-indigo-600 px-4 py-2 rounded-md text-white font-semibold tracking-wide cursor-pointer">
-          Registro
-        </button> 
-        <button class="bg-indigo-600 px-4 py-2 rounded-md text-white font-semibold tracking-wide cursor-pointer">
-          Edicion
-        </button> 
+      <div class="lg:ml-40 ml-10 space-x-8">         
+        
+           
+        <a href="{{$formulario}}">
+          <button class="bg-indigo-600 px-4 py-2 rounded-md text-white font-semibold tracking-wide cursor-pointer">
+            Registro
+          </button> 
+        </a>
+        
+        <a href="{{$edicion}}">
+          <button class="bg-indigo-600 px-4 py-2 rounded-md text-white font-semibold tracking-wide cursor-pointer">
+            Edicion
+          </button>
+        </a>
+
       </div> 
     </div>
   </div> 
@@ -40,17 +51,18 @@
             
           </thead> 
           <tbody>
-            <tr>
-              @foreach($lista as $item)
+            
+            @foreach($lista as $item)
+              <tr>
                 @for($i=0; $i< $numc; $i++)
-                  <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"> 
-                    <p class="text-gray-900 whitespace-no-wrap">
-                      {{ data_get($item, $cols[$i])}}
-                    </p> 
-                  </td>
+                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"> 
+                      <p class="text-gray-900 whitespace-no-wrap">
+                        {{ data_get($item, $cols[$i])}}
+                      </p> 
+                    </td>
                 @endfor
-              @endforeach
-            </tr>
+              </tr>
+            @endforeach 
           </tbody> 
         </table> 
         <div class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between "> 

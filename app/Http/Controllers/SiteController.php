@@ -24,7 +24,7 @@ class SiteController extends Controller
 
     public function personal(){ 
         $items = '0';//User::all();
-        $cols = ['id', 'name', 'rol', 'status'];
+        $cols = ['id', 'name', 'role', 'status'];
         $numc = '4';
         return view('personal', compact('items', 'cols', 'numc'));
     }
@@ -38,6 +38,18 @@ class SiteController extends Controller
 
     public function calendar(){
         return view('calendar');
+    }
+
+    public function forms(){
+        return view('formulario');
+    }
+
+    public function forms2(){
+        return view('formulario2');
+    }
+
+    public function forms3(){
+        return view('formulario3');
     }
 
     public function logout(Request $request){

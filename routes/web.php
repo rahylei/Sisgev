@@ -26,6 +26,10 @@ Route::get('/piesaz', [SiteController::class, 'piezas'])->middleware(['auth'])->
 Route::get('/personal', [SiteController::class, 'personal'])->middleware(['auth'])->name('personal');
 Route::get('/lineas', [SiteController::class, 'lineas'])->middleware(['auth'])->name('lineas');
 Route::get('/calendar', [SiteController::class, 'calendar'])->middleware(['auth'])->name('calendar');
+Route::get('/formulario', [SiteController::class, 'forms'])->middleware(['auth'])->name('form');
+Route::get('/formulario2', [SiteController::class, 'forms2'])->middleware(['auth'])->name('form2');
+Route::get('/formulario3', [SiteController::class, 'forms3'])->middleware(['auth'])->name('form3');
+
 
 Route::post('/logout', [SiteController::class, 'logout'])->name('logout');
 

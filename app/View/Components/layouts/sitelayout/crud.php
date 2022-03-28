@@ -41,22 +41,6 @@ class crud extends Component
         }
     }
 
-    public function getItems($item){
-        switch($item) {
-            case 0:
-                $this->lista = User::all();
-                break;
-            case 1:
-                $this->lista = Linea::all();
-                break;
-            case 2:
-                $this->lista = Pieza::all();
-                break;
-
-        }
-
-    }
-
     /**
      * Get the view / contents that represent the component.
      *
