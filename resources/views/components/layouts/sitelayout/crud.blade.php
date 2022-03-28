@@ -41,7 +41,7 @@
           </thead> 
           <tbody>
             <tr>
-              @foreach($items as $item)
+              @foreach($lista as $item)
                 @for($i=0; $i< $numc; $i++)
                   <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"> 
                     <p class="text-gray-900 whitespace-no-wrap">
