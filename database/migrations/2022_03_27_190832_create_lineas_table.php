@@ -19,7 +19,6 @@ return new class extends Migration
             $table->longText('descripcion');
             $table->foreignId('pieza_id')->constrained('piezas')->onDelete('cascade');
             $table->foreignId('lider_id')->constrained('users')->onDelete('cascade');   
-            /*$table->foreignId('personal')->constrained('plantillas')->onDelete('cascade');*/            
             $table->boolean('status')->default(false);
             $table->timestamps();
         });

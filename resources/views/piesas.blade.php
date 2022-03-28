@@ -3,7 +3,7 @@
 		- Piezas
 	</x-slot>
 	<x-slot name="main">
-		<x-layouts.sitelayout.crud>
+		<x-layouts.sitelayout.crud :items="$items" :cols="$cols" :numc="$numc">
 			<x-slot name="subtitulo">
 				Orden de piezas
 			</x-slot>

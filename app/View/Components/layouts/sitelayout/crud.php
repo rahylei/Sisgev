@@ -4,16 +4,23 @@ namespace App\View\Components\layouts\sitelayout;
 
 use Illuminate\View\Component;
 
+
 class crud extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
-     */
-    public function __construct()
+     */    
+    public $items;
+    public $cols;
+    public $numc;
+
+    public function __construct($items, $cols, $numc)
     {
-        //
+        $this->items = $items;
+        $this->cols = $cols;
+        $this->numc = (int)$numc;
     }
 
     /**

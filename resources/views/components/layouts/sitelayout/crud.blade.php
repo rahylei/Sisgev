@@ -31,63 +31,26 @@
         <table class="min-w-full leading-normal"> 
           <thead> 
             <tr> 
-              <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"> 
-                Nombre 
-              </th> 
-              <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"> 
-                Rol
-              </th> 
-              <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"> 
-                Registro 
-              </th> 
-              <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"> 
-                 Codigo de empleado
-              </th> 
-              <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"> 
-                Status 
-              </th> 
-            </tr> 
+              @for($i=0; $i< $numc; $i++)
+                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"> 
+                  {{$cols[$i]}} 
+                </th>
+              @endfor
+            </tr>
+            
           </thead> 
           <tbody>
-            <tr> 
-              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"> 
-                <div class="flex items-center"> 
-                  <div class="flex-shrink-0 w-10 h-10"> 
-                    <img class="w-full h-full rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80" alt="" /> 
-                  </div> 
-                  <div class="ml-3"> 
-                    <p class="text-gray-900 whitespace-no-wrap"> 
-                      Vera Carpenter 
+            <tr>
+              @foreach($items as $item)
+                @for($i=0; $i< $numc; $i++)
+                  <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"> 
+                    <p class="text-gray-900 whitespace-no-wrap">
+                      {{ data_get($item, $cols[$i])}}
                     </p> 
-                  </div> 
-                </div> 
-              </td> 
-              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"> 
-                <p class="text-gray-900 whitespace-no-wrap">
-                  Admin
-                </p> 
-              </td> 
-              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"> 
-                <p class="text-gray-900 whitespace-no-wrap"> 
-                  Jan 21, 2020 
-                </p> 
-              </td> 
-              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"> 
-                <p class="text-gray-900 whitespace-no-wrap"> 
-                  43 
-                </p> 
-              </td> 
-              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"> 
-                <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight"> 
-                  <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full">
-                    
-                  </span> 
-                  <span class="relative">
-                    Activo
-                  </span> 
-                </span> 
-              </td> 
-            </tr> 
+                  </td>
+                @endfor
+              @endforeach
+            </tr>
           </tbody> 
         </table> 
         <div class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between "> 
