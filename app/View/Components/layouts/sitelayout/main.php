@@ -4,6 +4,9 @@ namespace App\View\Components\layouts\sitelayout;
 
 use Illuminate\View\Component;
 use App\Models\User;
+use App\Models\Linea;
+use App\Models\Pieza;
+use App\Models\Plantilla;
 
 class main extends Component
 {
@@ -13,9 +16,17 @@ class main extends Component
      * @return void
      */
     public $users;
-    public function __construct(User $lista)
+    public $c_us = ['name','id'];
+    public $lineas;
+    public $piezas;
+    public $plantillas;
+
+    public function __construct(User $users, Linea $lineas, Pieza $piezas, Plantilla $plantillas)
     {
-        $this->users = $lista->all();
+        $this->users = $users->all();
+        $this->lineas = $lineas->all();
+        $this->piezas = $piezas->all();
+        $this->plantillas = $plantillas->all();
     }
 
     /**
