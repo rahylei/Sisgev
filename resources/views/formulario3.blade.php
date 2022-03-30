@@ -1,3 +1,5 @@
+@inject('users', 'App\Models\User')
+@inject('piezas', 'App\Models\Pieza')
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,12 +33,23 @@
 
                         <div class="mb-4">
                             <label for="nombre" class="block text-gray-700 text-sm font-bold mb-2">Pieza ID</label>
-                            <input type="text" name="codigo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="codigo">
+                            <select id="status" name="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            @foreach($piezas->all() as $pieza)    
+                                <option>{{$pieza->codigo}}</option>
+                            @endforeach
+                            </select>
+                            {{--<input type="text" name="codigo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="codigo">--}}
                         </div>
 
                         <div class="mb-4">
                             <label for="nombre" class="block text-gray-700 text-sm font-bold mb-2">Lider ID</label>
-                            <input type="text" name="codigo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="codigo">
+                            <select id="status" name="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            @foreach($users->all() as $user)    
+                                <option>{{$user->name}}</option>
+                            @endforeach
+                            </select>
+
+                            {{--<input type="text" name="codigo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="codigo">--}}
                         </div>
 
                         <div class="mb-4">
@@ -54,7 +67,7 @@
                             </span>
 
                             <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
-                                <a href="{{route('dashboard')}}">
+                                <a href="{{route('lineas')}}">
                                     <button type="button" class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-purple-800 focus:outline-none focus:border-green-700 focus:shadow-outline-green transition ease-in-out duration-150 sm:text-sm sm:leading-5 text-white">Cancelar</button>    
                                 </a>
                                 

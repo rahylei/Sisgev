@@ -65,7 +65,7 @@ class SiteController extends Controller
     public function storePersonal(Request $user){
 
         $sb = false;
-        
+
         if($user->status == 'activo'){
             $sb = true;
         } else {
@@ -90,6 +90,16 @@ class SiteController extends Controller
     public function forms3(){
         return view('formulario3');
     }
+
+    public function storePieza(Request $linea){
+        $alta = new Linea();
+        $alta->codigo = $linea->codigo;
+        $alta->descripcion = $linea->descripcion;
+        $alta->save();
+
+        return redirect('/piesaz');
+    }
+
 
     public function logout(Request $request){
     
