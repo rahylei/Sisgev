@@ -8,6 +8,11 @@ use App\Models\Linea;
 use App\Models\User;
 use App\Models\Plantilla;
 
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
+
 
 class SiteController extends Controller
 {
@@ -44,9 +49,43 @@ class SiteController extends Controller
         return view('formulario');
     }
 
+    public function storePieza(Request $pieza){
+        $alta = new Pieza();
+        $alta->codigo = $pieza->codigo;
+        $alta->descripcion = $pieza->descripcion;
+        $alta->save();
+
+        return redirect('/piesaz');
+    }
+
     public function forms2(){
         return view('formulario2');
     }
+
+    public function storePersonal(Request $user){
+
+        $sb = false;
+        
+        if($user->status == 'activo'){
+            $sb = true;
+        } else {
+            $sb = false;
+        }
+
+        DB::table('users')->insert([
+        'name' => $user->nombre,
+        'email' => 'Default@gmail.com',
+        'email_verified_at' => Carbon::now(),
+        'password' => Hash::make('12345678'),
+        'role' => $user->rol,
+        'status' => $sb,
+        'created_at' => Carbon::now(),
+        'updated_at'=> Carbon::now(),
+        ]);
+
+        return redirect('/personal');
+    }
+
 
     public function forms3(){
         return view('formulario3');

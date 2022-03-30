@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="{{ mix('js/app.js') }}" defer></script> 
+    <script src="{{ mix('js/app.js') }}" defer></script>
+    @livewireStyles
 </head>
 <body class="h-full">
     <div class="min-h-full">
@@ -27,7 +28,7 @@
     </div>
     {{--<script type="text/javascript" src="{{asset('js/app.js')}}"></script>--}}
     <x-layouts.sitelayout.footer/>
-    
+    @livewireScripts
 </body>
 </html>
 
