@@ -23,22 +23,22 @@ class SiteController extends Controller
 
     public function piezas(){
         $items = '2';//Pieza::all();
-        $cols = ['id', 'codigo', 'descripcion', '#-almacen', 'status'];
-        $numc = '5';
+        $cols = ['id', 'codigo', 'status'];
+        $numc = '3';
         return view('piesas', compact('items', 'cols', 'numc'));
     }
 
     public function personal(){ 
         $items = '0';//User::all();
-        $cols = ['id', 'name', 'role', 'status'];
-        $numc = '4';
+        $cols = ['id', 'name', 'status'];
+        $numc = '3';
         return view('personal', compact('items', 'cols', 'numc'));
     }
 
     public function lineas(){ 
         $items = '1';//Linea::all();
-        $cols = ['id', 'codigo', 'descripcion', 'pieza_id', 'lider_id', 'status'];
-        $numc = '6';       
+        $cols = ['id', 'codigo','status'];
+        $numc = '3';       
         return view('lineas', compact('items', 'cols', 'numc'));
     }
 
@@ -115,6 +115,37 @@ class SiteController extends Controller
         $alta->save();
 
         return redirect('/lineas');
+    }
+
+    public function editPieza($id){
+        $pieza = Pieza::find($id);
+        return view('editPieza', compact('pieza'));
+    }
+
+    public function updatePieza(Request $upPieza){
+
+        $sts;
+        if($upPieza->status == 1){
+            $sts = true;
+        } else {
+            $sts = false;
+        }
+
+        Pieza::updateOrCreate(['id'=>$upPieza->id],
+            [
+                'codigo' => $upPieza->codigo,
+                'descripcion' => $upPieza->descripcion,
+                'almacen' => $upPieza->almacen,
+                'status' => $sts,  
+            ]);
+
+        return redirect ('/piesaz');
+    }
+
+    public function deletePieza($id){
+        $pieza = Pieza::find($id)->delete();            
+        session()->flash('message', 'registro eliminado con exito...');
+        return redirect ('/piesaz');
     }
 
 

@@ -21,8 +21,6 @@
         </div>
       </header>
       <main>
-        <!-- component -->
-        {{--<x-layouts.sitelayout.main/>--}}
         {{$main}}
       </main>
     </div>

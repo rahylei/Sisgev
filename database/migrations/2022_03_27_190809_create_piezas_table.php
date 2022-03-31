@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('codigo');
             $table->longText('descripcion');
-            $table->integer('#-almacen')->default(0);
+            $table->integer('almacen')->default(0);
             $table->boolean('status')->default(false);
             $table->timestamps();
         });

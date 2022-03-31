@@ -30,7 +30,10 @@ Route::get('/formulario', [SiteController::class, 'forms'])->middleware(['auth']
 Route::get('/formulario2', [SiteController::class, 'forms2'])->middleware(['auth'])->name('form2');
 Route::get('/formulario3', [SiteController::class, 'forms3'])->middleware(['auth'])->name('form3');
 Route::post('/altaPieza', [SiteController::class, 'storePieza'])->middleware(['auth'])->name('altaPieza');
+Route::get('/editPieza/{id}', [SiteController::class, 'editPieza'])->middleware(['auth'])->name('editPieza');
+Route::post('/upPieza', [SiteController::class, 'updatePieza'])->middleware(['auth'])->name('upPieza');
 Route::post('/altaUser', [SiteController::class, 'storePersonal'])->middleware(['auth'])->name('altaUser');
+Route::get('/deletePieza/{id}', [SiteController::class, 'deletePieza'])->middleware(['auth'])->name('deletePieza');
 Route::post('/altaLinea', [SiteController::class, 'storeLinea'])->middleware(['auth'])->name('altaLinea');
 
 Route::post('/logout', [SiteController::class, 'logout'])->name('logout');

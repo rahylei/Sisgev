@@ -2,7 +2,7 @@
         <div class="lg:flex  lg:mt-3 md:mx-12 lg:mx-28 lg:justify-between">
             <div class="mb-4 lg:columns-1 w-96">
                 <p class="text-white font-bold mb-1 mt-3">About Us</p>
-                <p class="text-gray-200 text-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
+                <p class="text-gray-200 text-sm">Nosotros somos estudiantes de la carrera de ingenieria en sistemas que buscan desarrollar soluciones que implementen diferentes tecnologuias en la administracion ne la industria y ofrecer opciones para realizar las tareas cotidianas que que realizan día a día.
                 </p>
             </div>
             <div class="mb-4  lg:mt-3">
@@ -13,7 +13,7 @@
                             <div>
                                 <div class="lg:flex lg:flex-wrap gap-2 ">
                                     
-                                    <a href="">
+                                    <a href="https://github.com/rahylei/Sisgev">
                                         <button
                                             class="bg-gray-700 hover:bg-white hover:text-black  p-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
                                             <svg xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,7 @@
                                             </svg>
                                         </button>
                                     </a>
-                                    <a href="">
+                                    {{--<a href="">
                                         <button
                                             class="bg-blue-400 p-2 hover:bg-white hover:text-black font-semibold  text-white inline-flex items-center space-x-2 rounded">
                                             <svg class="w-5 h-5 fill-current" role="img"
@@ -60,7 +60,7 @@
                                                 </g>
                                             </svg>
                                         </button>
-                                    </a>
+                                    </a>--}}
                                 </div>
                             </div>
                         </div>
@@ -70,12 +70,12 @@
             <div class="lg:mt-3 mb-4">
                 <h3 class="text-white font-bold mb-2 lg:mb-2">Navigate</h3>
                 <div class="columns-2 md:columns-3 lg:columns-2">
-                    <a class="text-gray-200" href="">Navigate 0</a><br>
-                    <a href="" class="text-gray-200">Navigate 1</a><br>
-                    <a class="text-gray-200" href="">Navigate 2</a><br>
-                    <a class="text-gray-200" href="">Navigate 3</a><br>
-                    <a href="" class="text-gray-200">Navigate 4</a><br>
-                    <a href="" class="text-gray-200">Navigate 5</a><br>
+                    <a class="text-gray-200" href="{{route('dashboard')}}">Dashboard</a><br>
+                    <a href="{{route('piezas')}}" class="text-gray-200">Piezas</a><br>
+                    <a class="text-gray-200" href="{{route('lineas')}}">Lineas</a><br>
+                    <a class="text-gray-200" href="{{route('personal')}}">Personal</a><br>
+                    {{--<a href="" class="text-gray-200">Navigate 4</a><br>
+                    <a href="" class="text-gray-200">Navigate 5</a><br>--}}
                 </div>
             </div>
         </div>

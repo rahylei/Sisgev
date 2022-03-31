@@ -31,7 +31,7 @@ class DefaultUserSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-        'name' => 'Lider',
+        'nombre' => 'Lider',
         'email' => 'Lider@gmail.com',
         'email_verified_at' => Carbon::now(),
         'password' => Hash::make('12345678'),
@@ -42,7 +42,7 @@ class DefaultUserSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-        'name' => 'Operador',
+        'nombre' => 'Operador',
         'email' => 'Operador@gmail.com',
         'email_verified_at' => Carbon::now(),
         'password' => Hash::make('12345678'),        

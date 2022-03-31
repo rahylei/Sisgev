@@ -1,4 +1,5 @@
-<div class="bg-white p-8 rounded-md w-full"> 
+<div>
+<div class="bg-white p-8 rounded-md w-full "> 
   <div class=" flex items-center justify-between pb-6"> 
     <div> 
       <h2 class="text-gray-600 font-semibold">
@@ -18,10 +19,10 @@
       </div> 
     </div>
   </div> 
-  <div> 
+  <div class="flex justify-around"> 
     <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-      <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
-        <table class="min-w-full leading-normal"> 
+      <div class="inline-block min-w-full shadow rounded-lg overflow-hidden ">
+        <table class="min-w-full leading-normal "> 
           <thead> 
             <tr> 
               @for($i=0; $i< $numc; $i++)
@@ -32,7 +33,7 @@
             </tr>
             
           </thead> 
-          <tbody>
+          <tbody class="">
             
             @foreach($lista as $item)
               <tr>
@@ -42,13 +43,25 @@
                         {{ data_get($item, $cols[$i])}}
                       </p> 
                     </td>
-                @endfor
+                @endfor                             
+                <td>
+                  <a href="{{route('editPieza',$item->id)}}">
+                    <button class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-80">Editar</button>  
+                  </a>
+                
+                  <a href="{{route('deletePieza',$item->id)}}">
+                    <button class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-red-600 rounded-md hover:bg-red-500 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-80">Eliminar</button>   
+                  </a>
+                 
+                </td>   
               </tr>
             @endforeach 
+
           </tbody> 
         </table> 
-        <div class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between "> 
-          <span class="text-xs xs:text-sm text-gray-900"> 
+        <div class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between ">
+          
+          {{--<span class="text-xs xs:text-sm text-gray-900"> 
             Showing 1 to 4 of 50 Entries 
           </span> 
           <div class="inline-flex mt-2 xs:mt-0"> 
@@ -59,7 +72,7 @@
             <button class="text-sm text-indigo-50 transition duration-150 hover:bg-indigo-500 bg-indigo-600 font-semibold py-2 px-4 rounded-r">
               Next
             </button>
-          </div>
+          </div>--}}
         </div>
         </div>
       </div>
