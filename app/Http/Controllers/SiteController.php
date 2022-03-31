@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Models\Pieza;
 use App\Models\Linea;
 use App\Models\User;
@@ -91,13 +92,29 @@ class SiteController extends Controller
         return view('formulario3');
     }
 
-    public function storePieza(Request $linea){
+    public function storeLinea(Request $linea){
+
+        $st;
+        if($linea->status == 'activo'){
+            $st = true;
+        } else {
+            $st = false;
+        }
+
+        $pieza_id = Str::before($linea->pieza, '.-');
+        $user_id = Str::before($linea->user, '.-');
+
+
         $alta = new Linea();
         $alta->codigo = $linea->codigo;
         $alta->descripcion = $linea->descripcion;
+        $alta->pieza_id = (int)$pieza_id;
+        $alta->lider_id = (int)$user_id;
+        $alta->status = $st;
+        $alta->personal = 1;
         $alta->save();
 
-        return redirect('/piesaz');
+        return redirect('/lineas');
     }
 
 

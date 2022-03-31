@@ -20,7 +20,7 @@ class DefaultUserSeeder extends Seeder
     {
         //
         DB::table('users')->insert([
-        'name' => 'Administrador',
+        'nombre' => 'Administrador',
         'email' => 'AdminDefault@gmail.com',
         'email_verified_at' => Carbon::now(),
         'password' => Hash::make('12345678'),
